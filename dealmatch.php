@@ -52,11 +52,11 @@ function login($username, $password) {
 $client = login($username, $password);
 //jewel dealmatch
 $client->setUri('https://dealmatch.dominicks.com/Offers/AddAllToDealList');
-$dealmatch = json_encode(array('CompetitorID' => 5, 'CategoryID' => 0));
+$dealmatch = json_encode(array('CompetitorID' => 5, 'CategoryID' => 0,'SwySLPreference' => 'CO'));
 $response = $client->setRawData($dealmatch, 'application/json')->request('POST');
 
 //target dealmatch
-$dealmatch = json_encode(array('CompetitorID' => 4, 'CategoryID' => 0));
+$dealmatch = json_encode(array('CompetitorID' => 4, 'CategoryID' => 0,'SwySLPreference' => 'CO'));
 $response = $client->setRawData($dealmatch, 'application/json')->request('POST');
 
 function justFourRequest($clip, $client) {
